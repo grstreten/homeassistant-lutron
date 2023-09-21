@@ -12,6 +12,6 @@
     "pylutron"
   ],
   "requirements": [
-    "git+https://github.com/grstreten/pylutron@master#pyluton"
+    "git+https://github.com/grstreten/pylutron.git@master#pyluton"
   ]
 }
