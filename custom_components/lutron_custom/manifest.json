@@ -1,6 +1,7 @@
 {
   "domain": "lutron_custom",
   "name": "Lutron Custom",
+  "version": "0.1.0",
   "codeowners": [
     "@cdheiser",
     "@grstreten"
