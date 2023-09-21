@@ -1,6 +1,6 @@
 {
-  "domain": "lutronqs",
-  "name": "Lutron QS",
+  "domain": "lutron_custom",
+  "name": "Lutron Custom",
   "codeowners": [
     "@cdheiser",
     "@grstreten"

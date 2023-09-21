@@ -18,7 +18,7 @@ from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.util import slugify
 
-DOMAIN = "lutronqs"
+DOMAIN = "lutron_custom"
 
 PLATFORMS = [
     Platform.LIGHT,
