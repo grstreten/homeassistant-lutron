@@ -32,7 +32,7 @@ def setup_platform(
         devs.append(dev)
 
     for area_name, device in hass.data[LUTRON_DEVICES]["venetian"]:
-        dev = LutronCover(area_name, device, hass.data[LUTRON_CONTROLLER], tilt=True)
+        dev = LutronCover(area_name, device, hass.data[LUTRON_CONTROLLER], can_tilt=True)
         devs.append(dev)
 
     add_entities(devs, True)
@@ -46,12 +46,13 @@ class LutronCover(LutronDevice, CoverEntity):
         self,
         area_name: str,
         lutron_device: LutronDevice,
-        tilt: bool = False,
+        lutron_controller: LUTRON_CONTROLLER,
+        can_tilt: bool = False,
     ) -> None:
         """Initialize the Lutron cover."""
-        super().__init__(area_name, lutron_device)
-        self._tilt = tilt
-        if self._tilt:
+        super().__init__(lutron_controller, area_name, lutron_device)
+        self._can_tilt = can_tilt
+        if self._can_tilt:
             self._attr_supported_features = (
                 CoverEntityFeature.OPEN
                 | CoverEntityFeature.CLOSE
