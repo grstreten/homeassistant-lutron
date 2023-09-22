@@ -735,7 +735,7 @@ class Output(LutronEntity):
   def __do_query_tilt(self):
     """Helper to perform the actual query of the current tilt level of the
     venetian output."""
-    if self._can_tilt == False:
+    if self.can_tilt == False:
       return
     self._lutron.send(Lutron.OP_QUERY, Output._CMD_TYPE, self._integration_id,
             Output._ACTION_TILT_LEVEL)
@@ -758,7 +758,7 @@ class Output(LutronEntity):
   @property
   def tilt(self):
     """Returns the current tilt level by querying the remote controller."""
-    if self._can_tilt == False:
+    if self.can_tilt == False:
       return 0.0
     ev = self._query_waiters.request(self.__do_query_tilt)
     ev.wait(1.0)
@@ -779,7 +779,7 @@ class Output(LutronEntity):
     """Sets the new tilt level."""
     if self._tilt == new_tilt:
       return
-    if self._can_tilt == False:
+    if self.can_tilt == False:
       return
     self._lutron.send(Lutron.OP_EXECUTE, Output._CMD_TYPE, self._integration_id,
         Output._ACTION_TILT_LEVEL, "%.2f" % new_tilt)
