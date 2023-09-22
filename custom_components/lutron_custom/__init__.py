@@ -1,7 +1,7 @@
 """Component for interacting with a Lutron RadioRA 2 system."""
 import logging
 
-from pylutron import Button, Lutron
+from .pylutron import Button, Lutron
 import voluptuous as vol
 
 from homeassistant.const import (
