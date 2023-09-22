@@ -50,7 +50,7 @@ class LutronCover(LutronDevice, CoverEntity):
         can_tilt: bool = False,
     ) -> None:
         """Initialize the Lutron cover."""
-        super().__init__(lutron_controller, area_name, lutron_device)
+        super().__init__(area_name, lutron_device, lutron_controller)
         self._can_tilt = can_tilt
         if self._can_tilt:
             self._attr_supported_features = (
