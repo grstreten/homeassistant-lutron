@@ -293,6 +293,7 @@ class LutronXmlDbParser(object):
             'HWI_SEETOUCH_KEYPAD',
             'SEETOUCH_KEYPAD',
             'SEETOUCH_TABLETOP_KEYPAD',
+            'SEETOUCH_INTERNATIONAL_KEYPAD',
             'PICO_KEYPAD',
             'HYBRID_SEETOUCH_KEYPAD',
             'MAIN_REPEATER',
